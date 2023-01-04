@@ -3,19 +3,17 @@ import Modal from './Modal'
 import { reducer } from './reducer'
 
 const defaultState = {
-  people: [],
+  people: [{ id: 1, name: 'John' },
+  { id: 2, name: 'Paul' },
+  { id: 3, name: 'George' },
+  { id: 4, name: 'Ringo' }],
   isModalOpen: false,
   modalMessage: ''
 }
 
 function App() {
   const [name, setName] = useState('')
-  const [people, setPeople] = useState([
-    { id: 1, name: 'John' },
-    { id: 2, name: 'Paul' },
-    { id: 3, name: 'George' },
-    { id: 4, name: 'Ringo' }
-  ])
+
 
   const [state, dispatch] = useReducer(reducer, defaultState)
 
@@ -31,7 +29,7 @@ function App() {
         </div>
         <button type="submit" className="btn">Add Person</button>
       </form>
-      {people.map(person => {
+      {state.people.map(person => {
         return (
           <div className="item" key={person.id}>
             <h4>{person.name}</h4>
