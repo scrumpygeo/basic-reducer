@@ -1,6 +1,12 @@
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 import Modal from './Modal'
 import { reducer } from './reducer'
+
+const defaultState = {
+  people: [],
+  isModalOpen: false,
+  modalMessage: ''
+}
 
 function App() {
   const [name, setName] = useState('')
@@ -10,6 +16,9 @@ function App() {
     { id: 3, name: 'George' },
     { id: 4, name: 'Ringo' }
   ])
+
+  const [state, dispatch] = useReducer(reducer, defaultState)
+
 
   const handleSubmit = (e) => {
     e.preventDefault()
