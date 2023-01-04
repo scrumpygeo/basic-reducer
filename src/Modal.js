@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Modal = () => {
+const Modal = ({ modalMessage }) => {
   return (
-    <div>Modal</div>
+    <div className='modal'><p>{modalMessage}</p></div>
   )
 }
 

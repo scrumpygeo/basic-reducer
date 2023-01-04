@@ -33,7 +33,7 @@ function App() {
   }
   return (
     <div className="container">
-      {state.isModalOpen && <Modal />}
+      {state.isModalOpen && <Modal modalMessage={state.modalMessage} />}
       <form className="form" onSubmit={handleSubmit}>
         <div>
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} />

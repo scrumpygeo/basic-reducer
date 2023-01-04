@@ -8,6 +8,9 @@ export const reducer = (state, action) => {
       modalMessage: "New Person Added"
     }
   }
+  if (action.type === 'NO_VALUE') {
+    return { ...state, isModalOpen: true, modalMessage: 'Please enter a name' }
+  }
 
   return {
     ...state
