@@ -5,7 +5,16 @@ export const reducer = (state, action) => {
       ...state,
       people: newPeople,
       isModalOpen: true,
-      modalMessage: "New Person Added"
+      modalMessage: "New person added"
+    }
+  }
+  if (action.type === 'REMOVE_PERSON') {
+    const newPeople = state.people.filter(person => person.id !== action.payload)
+    return {
+      ...state,
+      people: newPeople,
+      isModalOpen: true,
+      modalMessage: 'Person removed'
     }
   }
   if (action.type === 'NO_VALUE') {

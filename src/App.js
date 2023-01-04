@@ -53,6 +53,7 @@ function App() {
         return (
           <div className="item" key={person.id}>
             <h4>{person.name}</h4>
+            <button className="delete-btn" onClick={() => dispatch({ type: 'REMOVE_PERSON', payload: person.id })}>Delete</button>
           </div>
         )
       })}
