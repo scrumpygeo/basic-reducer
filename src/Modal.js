@@ -1,6 +1,11 @@
-import React from 'react'
+import { React, useEffect } from 'react'
 
-const Modal = ({ modalMessage }) => {
+const Modal = ({ modalMessage, closeModal }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      closeModal()
+    }, 3000)
+  })
   return (
     <div className='modal'><p>{modalMessage}</p></div>
   )

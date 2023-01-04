@@ -31,9 +31,12 @@ function App() {
       dispatch({ type: 'NO_VALUE' })
     }
   }
+  const closeModal = () => {
+    dispatch({ type: 'CLOSE_MODAL' })
+  }
   return (
     <div className="container">
-      {state.isModalOpen && <Modal modalMessage={state.modalMessage} />}
+      {state.isModalOpen && <Modal modalMessage={state.modalMessage} closeModal={closeModal} />}
       <form className="form" onSubmit={handleSubmit}>
         <div>
           <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
