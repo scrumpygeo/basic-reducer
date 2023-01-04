@@ -1,13 +1,107 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #ddd;
+  color: #111;
+}
+
+@media screen and (min-width: 800px) {
+  body {
+    line-height: 1;
+  }
+}
+
+.container {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.btn {
+  display: inline-block;
+  background: #0a4682;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  border-color: transparent;
+  font-size: 1rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #ccc;
+  color: #0a4682;
+}
+
+.delete-btn {
+  display: inline-block;
+  background: red;
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  border-color: transparent;
+  font-size: 1rem;
+  /* margin-top: 2rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem; */
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background: rgb(212, 49, 49);
+  color: #eee;
+}
+
+.form {
+  background: #fff;
+  color: black;
+  max-width: 450px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+}
+.form input {
+  background: hsl(203, 75%, 85%);
+  border-color: transparent;
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+}
+
+.item {
+  background: #eee;
+  display: flex;
+  justify-content: space-between;
+  max-width: 400px;
+  margin: 0.75rem auto;
+  align-items: center;
+  padding: 2px 6px;
+  border-radius: 5px;
+  text-transform: capitalize;
+}
+
+.modal {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  /* background: white; */
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  border-radius: 5px;
+}
+
+.modal p {
+  margin-bottom: 0;
+  color: darkred;
 }
