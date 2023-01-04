@@ -20,12 +20,23 @@ function App() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (name) {
+      const newPerson = {
+        id: new Date().getTime().toString(),
+        name
+      }
+      dispatch({ type: 'ADD_PERSON', payload: newPerson })
+      setName('')
+    } else {
+      dispatch({ type: 'NO_VALUE' })
+    }
   }
   return (
     <div className="container">
+      {state.isModalOpen && <Modal />}
       <form className="form" onSubmit={handleSubmit}>
         <div>
-          <input type="text" />
+          <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
         </div>
         <button type="submit" className="btn">Add Person</button>
       </form>
