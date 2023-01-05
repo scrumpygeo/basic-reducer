@@ -2,9 +2,11 @@ import { React, useEffect } from 'react'
 
 const Modal = ({ modalMessage, closeModal }) => {
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       closeModal()
     }, 3000)
+    // cleanup function
+    return () => clearTimeout(timeout)
   })
   return (
     <div className='modal'><p>{modalMessage}</p></div>
